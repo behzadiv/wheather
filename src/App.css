@@ -1,4 +1,111 @@
 .App {
   text-align: center;
 }
+body{
+  background-image: url("../src/data/bacground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+/* weather form*/
+.formContainer{
+  display: flex;
+  justify-content: center;
+  width: 40rem;
+  margin: 1rem auto;
+  
+}
+.formContainer form{
+  display: flex;
+  justify-content: center;
+  
+}
+.formContainer input{
+  border: 1px solid #62d;
+  outline: none;
+  padding: 0px 10px;
+  border-radius: 5px;
+  font-size: x-large;
+  
+}
+.formContainer input:focus{
+  border: 3px solid #62d;
+}
+.formContainer button{
+  background-color: white;
+  color: blue;
+  padding: 4px 10px;
+  cursor: pointer;
+  border:1px solid #6d8569;
+  border-radius:0 50% 50% 0;
+}
+.formContainer button img{
+  transition: all 800ms;
 
+}
+.formContainer button img:hover{
+  transform: rotateY(360deg);
+  
+}
+/* end weather form*/
+
+/*  weatherInfo*/
+.infoBox{
+  max-width: 30rem;
+  margin:0px auto;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba(53, 57, 112, 0.37);
+  backdrop-filter: blur( 3px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.infoBox header{
+  display: flex;
+  color: rgb(37, 57, 175);
+  justify-content: space-around;
+  align-items: center;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba(53, 57, 112, 0.37);
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border-radius: 10px 10px 0 0;
+}
+.infoBox main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+   
+}
+.infoBox  h1{
+  font-size: xx-large;
+  color: rgb(34, 16, 68);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  margin: auto 2px;
+  padding: 30px 0px 2px 0;
+  position: relative;
+}
+.infoBox h1 span{
+  
+  position: absolute;
+  top:-1px;
+}
+.infoBox main img{
+  
+  height: 100%;
+  width: 200%;
+  margin-left: 50px;
+}
+.information{
+  color: #383528c4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: start;
+  line-height: 10px;
+  font-size: large;
+  margin-left: -50px;
+}
+.information span{
+  color:rgba(235, 215, 215, 0.788);
+  font-size: large;
+}
+/*  ends weatherInfo*/

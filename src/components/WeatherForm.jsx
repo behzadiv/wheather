@@ -2,11 +2,11 @@ import logo from "../data/search.svg"
 const WeatherForm = ({changeHandler,submitHandler ,inputCity}) => {
     
     return (  
-        <form onSubmit={submitHandler}>
-            <div>
-            <input type="text" onChange={changeHandler} value={inputCity}/>
+        <form onSubmit={submitHandler} className="formContainer">
+           
+            <input type="text" onChange={changeHandler} value={inputCity} style={{color: "blue"}}/>
             <button type="submit"><img src={logo} alt="search"/></button>
-        </div>
+        
         </form>
     );
 }

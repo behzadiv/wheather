@@ -14,7 +14,7 @@ const WeatherApp = () => {
             ",IR&units=metric&APPID=b52163e6fd69267b9d58e13c0e215232"
                  )
             .then((response)=>{
-                console.log(response);
+                console.log(response.data);
                 setState(response.data)
             })
             .catch((error)=>console.log(error))
