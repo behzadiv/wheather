@@ -1,7 +1,10 @@
 const WeatherForm = () => {
+    const changeHandler =(e)=>{
+        console.log(e.target.value);
+    }
     return (  
         <div>
-            <input type="text" name="" id=""/>
+            <input type="text" onChange={changeHandler}/>
         </div>
     );
 }
