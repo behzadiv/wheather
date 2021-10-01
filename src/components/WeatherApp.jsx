@@ -14,7 +14,7 @@ const WeatherApp = () => {
             ",IR&units=metric&APPID=b52163e6fd69267b9d58e13c0e215232"
                  )
             .then((response)=>{
-                console.log(response.data);
+                console.log(response);
                 setState(response.data)
             })
             .catch((error)=>console.log(error))
@@ -34,7 +34,7 @@ const WeatherApp = () => {
         <div>
             <h1>Weather App</h1>
             <WeatherForm changeHandler={cityHandler} submitHandler={searchCity} inputCity={inputCity} / >
-            <WeatherInfoBox />
+            <WeatherInfoBox state={state}/>
         </div>
      );
 }
