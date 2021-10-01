@@ -1,11 +1,13 @@
-const WeatherForm = () => {
-    const changeHandler =(e)=>{
-        console.log(e.target.value);
-    }
+import logo from "../data/search.svg"
+const WeatherForm = ({changeHandler,submitHandler ,inputCity}) => {
+    
     return (  
-        <div>
-            <input type="text" onChange={changeHandler}/>
+        <form onSubmit={submitHandler}>
+            <div>
+            <input type="text" onChange={changeHandler} value={inputCity}/>
+            <button type="submit"><img src={logo} alt="search"/></button>
         </div>
+        </form>
     );
 }
  
