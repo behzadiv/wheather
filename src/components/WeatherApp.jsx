@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import WeatherForm from "./WeatherForm"
 import WeatherInfoBox from "./WeatherInfoBox"
 import axios from "axios"
+import DarkMode from "./DarkMode"
 const WeatherApp = () => {
     const[city,setCity]=useState("")
     const[inputCity,setInputCity]=useState("")
@@ -32,7 +33,10 @@ const WeatherApp = () => {
 
     return ( 
         <div>
-            <h1>Weather App</h1>
+            <div className="title">
+                <h1>Weather App </h1>
+                <DarkMode />
+            </div>
             <WeatherForm changeHandler={cityHandler} submitHandler={searchCity} inputCity={inputCity} / >
             <WeatherInfoBox state={state}/>
         </div>

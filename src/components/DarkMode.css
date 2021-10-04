@@ -1,0 +1,16 @@
+
+#darkMode{
+    mask-image:  var(--toggle-image);
+    mask-size: cover;
+    width: 30px;
+    height: 30px;
+    background-color: var(--text-color);
+    margin-top: 10px;
+    cursor: pointer;
+    
+    transition: all 900ms ease-in-out;
+    
+}
+#darkMode:hover{
+    transform: rotateY(360deg);
+}

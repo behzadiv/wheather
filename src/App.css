@@ -1,12 +1,43 @@
+:root{
+  --blue: rgba(26, 56, 87, 0.904);
+  --white: rgb(236, 236, 236);
+}
+body.light {
+  --background-color: var(--white);
+  --text-color: var(--blue);
+  --font-weight: 400;
+  --image: url("../src/data/bacground.jpg");
+  --toggle-image:url(../src/data/moon.svg);
+}
+body.dark {
+  --background-color: var(--white);
+  --text-color: var(--white);
+  --font-weight: 400;
+  --image: url("../src/data/darkbg.jpg");
+  --toggle-image:url(../src/data/sun.svg);
+}
+
 .App {
   text-align: center;
 }
+.title{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px 20px;
+  width: 20rem;
+  margin: 0px auto;
+  color: var(--text-color);
+}
+
 body{
-  background-image: url("../src/data/bacground.jpg");
+  background-image: var(--image);
+  color: var(--text-color);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
 }
+
 /* weather form*/
 .formContainer{
   display: flex;
@@ -32,18 +63,18 @@ body{
   border: 3px solid #62d;
 }
 .formContainer button{
-  background-color: white;
-  color: blue;
-  padding: 4px 10px;
   cursor: pointer;
-  border:1px solid #6d8569;
-  border-radius:0 50% 50% 0;
+  mask-image: url(../src/data/search.svg);
+  mask-size: cover;
+  width: 30px;
+  height: 30px;
+  background-color: red;
 }
-.formContainer button img{
+.formContainer button {
   transition: all 800ms;
 
 }
-.formContainer button img:hover{
+.formContainer button:hover{
   transform: rotateY(360deg);
   
 }
@@ -61,7 +92,7 @@ body{
 }
 .infoBox header{
   display: flex;
-  color: rgb(37, 57, 175);
+  color: var(--text-color);
   justify-content: space-around;
   align-items: center;
   background: rgba( 255, 255, 255, 0.25 );
@@ -78,12 +109,13 @@ body{
 }
 .infoBox  h1{
   font-size: xx-large;
-  color: rgb(34, 16, 68);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-color);
+  font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-align: center;
   margin: auto 2px;
   padding: 30px 0px 2px 0;
   position: relative;
+  height: 7vh;
 }
 .infoBox h1 span{
   
@@ -103,9 +135,65 @@ body{
   line-height: 10px;
   font-size: large;
   margin-left: -50px;
+  margin-top: 20px;
 }
 .information span{
   color:rgba(235, 215, 215, 0.788);
   font-size: large;
 }
 /*  ends weatherInfo*/
+
+
+@media  screen and (max-width: 700px) {
+ 
+  .formContainer{
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    width: 100%;
+  }
+  .formContainer input{
+    border: 1px solid #62d;
+    outline: none;
+    padding: 0px 10px;
+    border-radius: 5px;
+    font-size: large;
+    width: 15rem;
+  }
+  .infoBox{
+    max-width: 20rem;
+    margin:0px auto;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba(53, 57, 112, 0.37);
+    backdrop-filter: blur( 3px );
+    border-radius: 10px;
+    border: 1px solid rgba(173, 31, 31, 0.18);
+    height: 70vh;
+  }
+  .infoBox header{
+    height: 15vh;
+  }
+  .infoBox main{
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center; 
+  }
+  .infoBox main img{
+    height: 25vh;
+    width: 100%;
+    margin: 0px auto;
+  }
+  .information{
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 0px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left:50px;
+    font-size: medium;
+    margin-top: -30px;
+  }
+  
+}
+
