@@ -15,7 +15,7 @@ const WeatherInfoBox = ({ state }) => {
     }
   });
   const renderIcon = (state) => {
-    console.log(state.weather[0].main.toLowerCase());
+    //console.log(state.weather[0].main.toLowerCase());
     const weather = state.weather[0].main.toLowerCase();
     switch (weather) {
       case "clear":
@@ -37,7 +37,7 @@ const WeatherInfoBox = ({ state }) => {
   };
   const renderDay = () => {
     const today = Date().toString().split(" ")[0];
-    console.log(today);
+    //console.log(today);
     setDay(today);
   };
   return (

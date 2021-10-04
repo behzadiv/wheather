@@ -3,22 +3,32 @@ import WeatherForm from "./WeatherForm"
 import WeatherInfoBox from "./WeatherInfoBox"
 import axios from "axios"
 import DarkMode from "./DarkMode"
+import {toast} from "react-toastify"
 const WeatherApp = () => {
     const[city,setCity]=useState("")
     const[inputCity,setInputCity]=useState("")
     const[state,setState]=useState("")
     useEffect(()=>{
         if(city){
-
             axios.get("http://api.openweathermap.org/data/2.5/weather?q="
             +city+
             ",IR&units=metric&APPID=b52163e6fd69267b9d58e13c0e215232"
-                 )
+            )
             .then((response)=>{
-                console.log(response.data);
                 setState(response.data)
             })
-            .catch((error)=>console.log(error))
+            .catch((error)=>
+            {   
+                if(!error.response){
+
+                    toast.warning("check your connection ")
+                    return;
+                }
+                if(error.response.status == 404)
+                    
+                toast.warning("Please Enter Iran's Cities")
+                }
+            )
         }
     },[city])
     const cityHandler =(e)=>{

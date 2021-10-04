@@ -18,7 +18,7 @@ const DarkMode = () => {
         body.classList.add(lightTheme)
     }
     const switchTheme=(e)=>{
-        console.log(e.target.classList);
+        //console.log(e.target.classList);
         if(theme === darkTheme){
             body.classList.replace(lightTheme,darkTheme)
             e.target.classList.remove(clickedClass)
@@ -30,7 +30,7 @@ const DarkMode = () => {
             localStorage.setItem("theme","dark")
             theme = darkTheme
         }
-        console.log(theme);
+        //console.log(theme);
     }
     return ( 
     
