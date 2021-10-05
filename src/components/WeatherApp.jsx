@@ -10,7 +10,7 @@ const WeatherApp = () => {
     const[state,setState]=useState("")
     useEffect(()=>{
         if(city){
-            axios.get("http://api.openweathermap.org/data/2.5/weather?q="
+            axios.get("https://api.openweathermap.org/data/2.5/weather?q="
             +city+
             ",IR&units=metric&APPID=b52163e6fd69267b9d58e13c0e215232"
             )
